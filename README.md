@@ -5,8 +5,8 @@ This project analyzes user behavior data from a sample SaaS / app product using 
 The goal is to understand how users interact with the product after signup and identify key business insights and how sql works.
 
 ## TOOLS USED 
-MySQL Workbench
-SQL
+MySQL Workbench <br>
+SQL 
 
 ## DATASET DESCRIPTION
 users table:
