@@ -9,12 +9,21 @@ MySQL Workbench <br>
 SQL 
 
 ## DATASET DESCRIPTION
-users table: <br>
+- users table: <br>
 user_id – Unique user identifier <br>
 signup_date – Date user signed up <br>
 source – Acquisition source (ads, organic, referral) <br>
 <br>
-events table:<br>
+- events table:<br>
 user_id – User identifier<br>
 event_date – Date of event<br>
 event_type – User action (signup, login, add_to_cart, purchase)
+
+## ANALYSIS PERFORMED
+- Daily signup trend <br>
+- Users by acquisition source <br>
+- Active vs inactive users <br>
+- Funnel analysis (signup till purchase) <br>
+- Conversion rate calculation <br>
+- Purchase analysis by source <br>
+- Time taken from signup to purchase <br>
