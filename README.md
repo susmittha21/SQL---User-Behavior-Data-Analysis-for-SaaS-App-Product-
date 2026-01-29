@@ -24,19 +24,15 @@ The objective of this analysis is to:
 
 The dataset represents user activity data from a SaaS / app-based product and consists of two tables:
 
-- users TABLE
-| Column Name | Description                                       |
-| ----------- | ------------------------------------------------- |
-| user_id     | Unique identifier for each user                   |
-| signup_date | Date the user signed up                           |
-| source      | Acquisition source (e.g., Organic, Ads, Referral) |
-
-- events TABLE
-| Column Name | Description                                          |
-| ----------- | ---------------------------------------------------- |
-| user_id     | User identifier                                      |
-| event_name  | User action (signup, login, feature usage, purchase) |
-| event_date  | Date of the event                                    |
+- users table: <br>
+user_id – Unique user identifier <br>
+signup_date – Date user signed up <br>
+source – Acquisition source (ads, organic, referral) <br>
+<br>
+- events table:<br>
+user_id – User identifier<br>
+event_date – Date of event<br>
+event_type – User action (signup, login, add_to_cart, purchase)
 
 
 ---
@@ -49,30 +45,11 @@ The dataset represents user activity data from a SaaS / app-based product and co
 - Average time from signup to purchase was ~3-4 days, suggesting a short decision cycle.
 - A significant portion of users dropped off between signup and first login, making it the most critical funnel stage.
 
-
-
-
+---
 
 ## TOOLS USED 
 MySQL Workbench <br>
 SQL 
 
-## DATASET DESCRIPTION
-- users table: <br>
-user_id – Unique user identifier <br>
-signup_date – Date user signed up <br>
-source – Acquisition source (ads, organic, referral) <br>
-<br>
-- events table:<br>
-user_id – User identifier<br>
-event_date – Date of event<br>
-event_type – User action (signup, login, add_to_cart, purchase)
+---
 
-## ANALYSIS PERFORMED
-- Daily signup trend <br>
-- Users by acquisition source <br>
-- Active vs inactive users <br>
-- Funnel analysis (signup till purchase) <br>
-- Conversion rate calculation <br>
-- Purchase analysis by source <br>
-- Time taken from signup to purchase <br>
