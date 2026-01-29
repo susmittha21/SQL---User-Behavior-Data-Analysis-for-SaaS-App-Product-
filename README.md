@@ -29,7 +29,7 @@ user_id – Unique user identifier <br>
 signup_date – Date user signed up <br>
 source – Acquisition source (ads, organic, referral) <br>
 <br>
-- events table:<br>
+-  events table: <br>
 user_id – User identifier<br>
 event_date – Date of event<br>
 event_type – User action (signup, login, add_to_cart, purchase)
