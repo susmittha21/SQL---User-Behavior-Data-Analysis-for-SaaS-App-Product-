@@ -28,10 +28,9 @@ The dataset represents user activity data from a SaaS / app-based product and co
 user_id – Unique user identifier <br>
 signup_date – Date user signed up <br>
 source – Acquisition source (ads, organic, referral) <br>
-<br>
--  events table: <br>
-user_id – User identifier<br>
-event_date – Date of event<br>
+- events table: <br>
+user_id – User identifier <br>
+event_date – Date of event <br>
 event_type – User action (signup, login, add_to_cart, purchase)
 
 
@@ -47,7 +46,7 @@ event_type – User action (signup, login, add_to_cart, purchase)
 
 ---
 
-## TOOLS USED 
+## Tools Used 
 MySQL Workbench <br>
 SQL 
 
