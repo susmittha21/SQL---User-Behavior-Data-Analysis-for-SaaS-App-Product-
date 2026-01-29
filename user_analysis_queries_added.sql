@@ -40,12 +40,12 @@ FROM events
 GROUP BY event_type
 ORDER BY event_count DESC;
 
--- 4. ACTIVE USERS (LOGGED ATLEAST ONCE)
+-- 4. ACTIVE USERS (LOGGED ATLEAST ONCE) - MEASURES ACTUAL PRODUCT USAGE
 SELECT COUNT(DISTINCT user_id) AS active_users
 FROM events
 WHERE event_type = 'login';
 
--- 5. DROPOFF (SIGNED ,NOT LOGGED IN)
+-- 5. DROPOFF (SIGNED ,NOT LOGGED IN) - 30 USERS
 SELECT u.user_id
 FROM users u
 LEFT JOIN events e
@@ -53,7 +53,7 @@ ON u.user_id = e.user_id AND e.event_type = 'login'
 WHERE e.user_id IS NULL;
 
 
--- 6. FUNNEL ANALYSIS
+-- 6. FUNNEL ANALYSIS - USER DROPOFF AT EACH FUNNEL STAGE
 SELECT
     SUM(event_type = 'signup') AS signups,
     SUM(event_type = 'login') AS logins,
@@ -84,4 +84,26 @@ JOIN events e
 ON u.user_id = e.user_id
 WHERE e.event_type = 'purchase'
 GROUP BY u.user_id;
+
+-- 10. SIGNUP TO PURCHASE RATE 
+SELECT
+    ROUND(
+        COUNT(DISTINCT p.user_id) * 100.0 /
+        COUNT(DISTINCT u.user_id),
+        2
+    ) AS signup_to_purchase_rate
+FROM users u
+LEFT JOIN events p
+  ON u.user_id = p.user_id
+  AND p.event_type = 'purchase';
+
+
+-- 11. SIMPLE RETENTION - MEASURES SHORT TERM USER RETENTION
+SELECT
+    COUNT(DISTINCT u.user_id) AS retained_users
+FROM users u
+JOIN events e
+  ON u.user_id = e.user_id
+WHERE e.event_type = 'login'
+  AND DATEDIFF(e.event_date, u.signup_date) BETWEEN 1 AND 7;
 
