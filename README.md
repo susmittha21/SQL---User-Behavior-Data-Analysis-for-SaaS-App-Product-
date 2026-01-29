@@ -1,8 +1,57 @@
-# SQL-User-Behavior-Data-Analysis-for-SaaS/App-Product
 
-## OBJECTIVE 
-This project analyzes user behavior data from a sample SaaS / app product using MySQL. <br>
-The goal is to understand how users interact with the product after signup and identify key business insights and how sql works.
+# User Behavior & Funnel Analysis for a SaaS Product using SQL
+
+---
+
+## Problem Statement
+
+SaaS products generate large volumes of user interaction data, but without structured analysis, it is difficult to understand how users behave after signup, where they drop off, and which acquisition sources drive meaningful engagement and conversions.
+
+This project analyzes user behavior data to identify engagement patterns, funnel drop-offs, and conversion performance using SQL.
+
+The objective of this analysis is to:
+
+- Analyze user acquisition sources and signup trends
+- Understand user engagement and activity behavior
+- Perform funnel and drop-off analysis
+- Measure conversion rates from signup to purchase
+- Estimate time taken by users to convert
+- Derive actionable insights that can support product and marketing decisions
+  
+---
+
+## Dataset Description
+
+The dataset represents user activity data from a SaaS / app-based product and consists of two tables:
+
+- users TABLE
+| Column Name | Description                                       |
+| ----------- | ------------------------------------------------- |
+| user_id     | Unique identifier for each user                   |
+| signup_date | Date the user signed up                           |
+| source      | Acquisition source (e.g., Organic, Ads, Referral) |
+
+- events TABLE
+| Column Name | Description                                          |
+| ----------- | ---------------------------------------------------- |
+| user_id     | User identifier                                      |
+| event_name  | User action (signup, login, feature usage, purchase) |
+| event_date  | Date of the event                                    |
+
+
+---
+
+## Key Insights
+
+- ~50% of users signed up but never logged in, indicating onboarding or intent mismatch.
+- Organic and Referral sources contributed the highest number of signups.
+- Only ~14% of total signups completed a purchase, highlighting funnel leakage.
+- Average time from signup to purchase was ~3-4 days, suggesting a short decision cycle.
+- A significant portion of users dropped off between signup and first login, making it the most critical funnel stage.
+
+
+
+
 
 ## TOOLS USED 
 MySQL Workbench <br>
